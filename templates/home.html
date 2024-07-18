@@ -2,49 +2,34 @@
 <html>
   <head>
     <title>Yong Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      h1{
-        font-size: 40px;
-        font-width : normal;
-        color: rgb(50,50,50);
-        font-family: roboto;
-        text-align: center;
-      }
       #banner{
+        height: 360px;
         width: 100%;
-        height:  360px;
+        onject-fit: cover;
+        
       }
-      h2{
-        font-size: 32px;
-        font-width : normal;
-        color: rgb(50,50,50);
-        font-family: roboto;
-        text-align: center;
-      }
-      .bodytext{
-        font-family: roboto;
-        color: rgb(80,80,80);
-       
-      }
-    #container{
-      max-width:720px;
-      margin: 0 auto 0 auto;
-    }
     </style>
   </head>
  
   <body>
-    <div id="container">
-      <h1>Yong Careers</h1>
-
-      <img id="banner" src= "https://8272e6fa-8e72-479a-9c06-d402a1a66cf3-00-1cgr9t5qg78md.sisko.replit.dev/static/banner.jpg">
-      <h2>About Yong</h2>
-      <p class="bodytext"">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa enim nec dui nunc mattis enim ut. Neque convallis a cras semper. Et malesuada fames ac turpis egestas integer.</p>
-      <h2>Open positions</h2>
-      <p class="bodytext">TODO- Show the jobs here</p>
-      <div style="text-align:center;"">
-      <button>Contact US!</button>
-        <p>Copyright 2022,Yong</p>
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4"">{{company_name}} Careers</h1>
+      <img class="img-fluid" id="banner" src= "https://8272e6fa-8e72-479a-9c06-d402a1a66cf3-00-1cgr9t5qg78md.sisko.replit.dev/static/banner.jpg">
+      <h2 class="text-center mt-2 mb-4"">About Yong</h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa enim nec dui nunc mattis enim ut. Neque convallis a cras semper. Et malesuada fames ac turpis egestas integer.</p>
+      <h2 class = "text-center mt-2 mb-4"">Open positions</h2>
+      <div>
+        {% for job in jobs %}
+        {% include'jobsItem.html'%}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <button class="btn btn-outline-primary">Contact US!</button>
+        <p class="mt-4">Copyright 2022,Yong</p>
       </div>
     </div>
   </body>
